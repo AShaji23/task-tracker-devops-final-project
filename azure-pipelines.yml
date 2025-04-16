@@ -38,7 +38,7 @@ steps:
       -Dsonar.projectKey=task-tracker-devops \
       -Dsonar.sources=src \
       -Dsonar.host.url=http://localhost:9000 \
-      -Dsonar.login=your_sonarqube_token
+      -Dsonar.login=squ_12050bce28c62b8b262c8062547f6a4bfcb10c9d
   displayName: 'Run SonarQube Analysis'
 
 - task: SonarQubePublish@5
