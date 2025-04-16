@@ -34,11 +34,13 @@ steps:
   displayName: 'Prepare SonarQube Analysis'
 
 - script: |
+    export SONAR_TOKEN=squ_12050bce28c62b8b262c8062547f6a4bfcb10c9d
     npx sonar-scanner \
       -Dsonar.projectKey=task-tracker-devops \
       -Dsonar.sources=src \
       -Dsonar.host.url=http://localhost:9000 \
-      -Dsonar.login=squ_12050bce28c62b8b262c8062547f6a4bfcb10c9d
+      -Dsonar.token=$SONAR_TOKEN \
+      -Dsonar.branch.name=
   displayName: 'Run SonarQube Analysis'
 
 - task: SonarQubePublish@5
