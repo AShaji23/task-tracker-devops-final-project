@@ -50,7 +50,7 @@ steps:
 
 
 - script: |
-    npm run test -- --coverage || echo "No tests found, skipping"
+    CI=true npm test -- --coverage --watchAll=false || echo "No tests found, skipping"
   displayName: 'Run Unit Tests & Generate Code Coverage Report'
 
 
