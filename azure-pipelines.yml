@@ -69,7 +69,8 @@ steps:
 
 - script: |
     npm install -g serve
-    serve -s build -l $(port)
+    nohup serve -s build -l $(port) > serve.log 2>&1 &
+    echo "Serve started in background on port $(port)"
   displayName: 'Deploy to Dev Environment'
   condition: succeeded()
 
