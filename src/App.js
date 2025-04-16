@@ -28,6 +28,8 @@ function App() {
       />
       <button onClick={addTask}>Add Task</button>
 
+      <p>Total tasks: {task.length} </p>
+
       <ul>
         {tasks.map((t, index) => (
           <li key={index}>{t}</li>
