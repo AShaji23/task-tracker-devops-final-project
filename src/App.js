@@ -12,6 +12,11 @@ function App() {
     }
   };
 
+  const deleteTask = (indexToDelete) => {
+    setTasks(tasks.filter((_, index) => index !== indexToDelete));
+  };
+  
+
   return (
     <div className="App">
       <h1>Task Tracker</h1>
@@ -28,6 +33,16 @@ function App() {
           <li key={index}>{t}</li>
         ))}
       </ul>
+
+      <ul>
+        {tasks.map((t, index) => (
+          <li key={index}>
+            {t}
+            <button onClick={() => deleteTask(index)}>❌</button>
+          </li>
+        ))}
+      </ul>
+
     </div>
   );
 }
